@@ -1,0 +1,9 @@
+body,
+html,
+#game-container,
+canvas {
+  background-color: #9bd6ff !important;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
