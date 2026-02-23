@@ -1,6 +1,6 @@
 console.log("start menu");
 import { W, H, isMobile } from "../constants.js";
-//import Button from "../components/Button.js";
+import Button from "../components/Button.js";
 
 export default class MenuScene extends Phaser.Scene {
   constructor() {
@@ -18,8 +18,52 @@ export default class MenuScene extends Phaser.Scene {
       })
       .setOrigin(0.5);
 
-    if (!isMobile) {
-      //
-    }
+    const s = H / 8;
+    const x = W / 2;
+    let y = H / 2;
+
+    console.log(H / 10);
+
+    const petsButton = this.newButtonMenu(x, y, "Персонажи", "PetsScene");
+    const mapsButton = this.newButtonMenu(x, y + s, "Играть", "MapsScene");
+    const settingsButton = this.newButtonMenu(
+      x,
+      y + 2 * s,
+      "Настройки",
+      "SettingsScene",
+    );
+    const infoButton = new Button(
+      this,
+      W - H / 10,
+      H - H / 10,
+      "i",
+      () => {
+        this.scene.start("InfoScene");
+      },
+      {
+        color: 0xff5900,
+        width: H / 10,
+        height: H / 10,
+        textStyle: { fontSize: `${Math.ceil(H / 20)}px`, color: "#ffffff" },
+      },
+    );
+  }
+
+  newButtonMenu(x, y, txt, scene) {
+    return new Button(
+      this,
+      x,
+      y,
+      txt,
+      () => {
+        this.scene.start(scene);
+      },
+      {
+        color: 0x4caf50,
+        width: W / 5,
+        height: H / 10,
+        textStyle: { fontSize: `${Math.ceil(H / 20)}px`, color: "#ffffff" },
+      },
+    );
   }
 }

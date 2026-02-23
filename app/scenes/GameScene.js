@@ -1,17 +1,17 @@
-console.log("start SettingsScene");
+console.log("start GameScene");
 import { newBackButton } from "../components/Button.js";
 import { W, H } from "../constants.js";
 
-export default class SettingsScene extends Phaser.Scene {
+export default class GameScene extends Phaser.Scene {
   constructor() {
-    super({ key: "SettingsScene" });
+    super({ key: "GameScene" });
   }
 
   create() {
     //this.gameState = this.game.registry.get("gameState");
     //this.gameState.loadSettings();
 
-    console.log("SettingsScene");
+    console.log("GameScene");
     newBackButton(this);
   }
 }
