@@ -1,6 +1,7 @@
 console.log("start menu");
 import { W, H, isMobile } from "../constants.js";
 import Button from "../components/Button.js";
+import { ListPets } from "../pets/listPets.js";
 
 export default class MenuScene extends Phaser.Scene {
   constructor() {
@@ -20,9 +21,7 @@ export default class MenuScene extends Phaser.Scene {
 
     const s = H / 8;
     const x = W / 2;
-    let y = H / 2;
-
-    console.log(H / 10);
+    const y = H / 2;
 
     const petsButton = this.newButtonMenu(x, y, "Персонажи", "PetsScene");
     const mapsButton = this.newButtonMenu(x, y + s, "Играть", "MapsScene");
