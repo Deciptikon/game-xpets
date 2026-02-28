@@ -1,7 +1,4 @@
 export const data = {
-  image: "./assets/cat.png",
-  icon: "./app/pets/icon/cat.png",
-
   init: function (pet) {
     pet.selfCounter = 0;
     pet.lastTile = null;

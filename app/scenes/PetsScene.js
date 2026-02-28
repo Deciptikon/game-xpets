@@ -19,12 +19,13 @@ export default class PetsScene extends Phaser.Scene {
       H / 2,
       100,
       100,
-      "cat_icon",
+      "icon_cat",
       null,
       () => {
         console.log("!!!!!!!!");
+        btt.x = btt.x < W / 2 ? W * 0.75 : W * 0.25;
       },
-      { scale: 0.35, hoverScale: 0.5 },
+      { scale: 0.4, hoverScale: 0.5 },
     );
 
     console.log("PetsScene");

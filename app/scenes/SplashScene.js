@@ -1,5 +1,6 @@
 console.log("start splash");
 import { W, H, isMobile } from "../constants.js";
+import { ListPets } from "../pets/listPets.js";
 
 const w = W * 0.75; // относительная длина полосы загрузки
 const h = 10; // высота полосы
@@ -32,7 +33,8 @@ export default class SplashScene extends Phaser.Scene {
       });
     });
 
-    this.load.image("cat_icon", "./app/pets/cat/img/icon.png");
+    this.loadPetsResourses();
+
     //this.load.image("splash", "./assets/splash.png");
 
     //this.loadFromKollection(ListPets, ["image", "icon"]);
@@ -52,6 +54,16 @@ export default class SplashScene extends Phaser.Scene {
     //this.load.image("tileset", "./src/Map/tileset3_x64.png");
 
     //this.load.text("readme", "./README.md");
+  }
+
+  loadPetsResourses() {
+    for (const key in ListPets) {
+      if (ListPets.hasOwnProperty(key)) {
+        this.load.image(`icon_${key}`, `./app/pets/${key}/img/icon.png`);
+        this.load.image(`image_${key}`, `./app/pets/${key}/img/image.png`);
+        //this.load.sound(`voice_${key}`, `./app/pets/${key}/mp3/voice.mp3`);
+      }
+    }
   }
 
   loadFromKollection(kollection, list_property, prefix = "") {
