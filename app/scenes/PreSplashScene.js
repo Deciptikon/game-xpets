@@ -17,7 +17,7 @@ export default class PreSplashScene extends Phaser.Scene {
     });
 
     //загружаем картинку для сплеш-скрина
-    //this.load.image("splash", "./assets/splash.png");
+    this.load.image("splash", "./app/assets/splash.png");
   }
 
   create() {

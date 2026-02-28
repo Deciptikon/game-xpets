@@ -32,6 +32,7 @@ export default class SplashScene extends Phaser.Scene {
       });
     });
 
+    this.load.image("cat_icon", "./app/pets/cat/img/icon.png");
     //this.load.image("splash", "./assets/splash.png");
 
     //this.loadFromKollection(ListPets, ["image", "icon"]);
@@ -44,9 +45,9 @@ export default class SplashScene extends Phaser.Scene {
         //this.load.image(`icon_loc_${id}`, ListLoc[id].icon_sprite);
       }
     }*/
-    for (let i = 0; i <= 6; i++) {
-      //this.load.image(`loc_lvl_${i}`, `./assets/loc_lvl_${i}.png`);
-    }
+    //for (let i = 0; i <= 6; i++) {
+    //this.load.image(`loc_lvl_${i}`, `./assets/loc_lvl_${i}.png`);
+    //}
 
     //this.load.image("tileset", "./src/Map/tileset3_x64.png");
 
