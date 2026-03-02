@@ -12,6 +12,6 @@ export default class InventoryScene extends Phaser.Scene {
     //this.gameState.loadSettings();
 
     console.log("InventoryScene");
-    newBackButton(this);
+    newBackButton(this, "PetScene");
   }
 }

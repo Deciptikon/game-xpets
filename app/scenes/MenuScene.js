@@ -1,5 +1,5 @@
 console.log("start menu");
-import { W, H, isMobile } from "../constants.js";
+import { W, H, positiveButton } from "../constants.js";
 import Button from "../components/Button.js";
 
 export default class MenuScene extends Phaser.Scene {
@@ -10,7 +10,7 @@ export default class MenuScene extends Phaser.Scene {
   create() {
     const title = this.add
       .text(W / 2, H / 4, "XPets", {
-        fontSize: "48px",
+        fontSize: "80px",
         fontFamily: "Arial",
         color: "#ffffff",
         stroke: "#000000",
@@ -56,12 +56,7 @@ export default class MenuScene extends Phaser.Scene {
       () => {
         this.scene.start(scene);
       },
-      {
-        color: 0x4caf50,
-        width: W / 5,
-        height: H / 10,
-        textStyle: { fontSize: `${Math.ceil(H / 20)}px`, color: "#ffffff" },
-      },
+      positiveButton,
     );
   }
 }

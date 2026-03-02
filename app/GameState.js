@@ -1,4 +1,5 @@
 import { GAME_NAME } from "./constants.js";
+import { ListPets } from "./pets/listPets.js";
 
 export default class GameState {
   constructor() {
@@ -60,5 +61,12 @@ export default class GameState {
 
   save() {
     //this.saveToLocalStorage();
+  }
+
+  updateStats() {
+    //без учета действий предметов
+    this.pet.type = this.currentPet;
+    this.pet.stats = ListPets[this.pet.type].stats;
+    this.pet.probs = ListPets[this.pet.type].probs;
   }
 }
