@@ -22,7 +22,7 @@ export default class PetsScene extends Phaser.Scene {
   }
 
   createAllPets() {
-    let x = 100;
+    let x = 200;
     for (const key in ListPets) {
       const btt = new IconButton(
         this,
