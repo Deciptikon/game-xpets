@@ -12,15 +12,13 @@ export default class PetsScene extends Phaser.Scene {
   }
 
   create() {
-    //this.gameState = this.game.registry.get("gameState");
+    this.gameState = this.game.registry.get("gameState");
     //this.gameState.loadSettings();
 
     this.createAllPets();
 
     console.log("PetsScene");
     newBackButton(this);
-
-    console.log(ListPets);
   }
 
   createAllPets() {
@@ -30,12 +28,14 @@ export default class PetsScene extends Phaser.Scene {
         this,
         x,
         H / 2,
-        100,
-        100,
+        200,
+        200,
         `icon_${key}`,
         null,
         () => {
           console.log(`icon_${key}`);
+          this.gameState.currentPet = key;
+          this.scene.start("PetScene");
         },
         { scale: 0.4, hoverScale: 0.5 },
       );
