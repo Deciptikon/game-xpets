@@ -2,6 +2,7 @@ console.log("start PetScene");
 import Button, { newBackButton } from "../components/Button.js";
 import IconButton from "../components/IconButton.js";
 import StatusBar from "../components/StatusBar.js";
+import TextBox from "../components/TextBox.js";
 import { W, H, positiveButton } from "../constants.js";
 import { ListPets, STATS } from "../pets/listPets.js";
 
@@ -18,6 +19,24 @@ export default class PetScene extends Phaser.Scene {
 
     this.gameState.updateStats();
     this.drawStats();
+
+    const info = new TextBox(
+      this,
+      H / 20,
+      H * 0.2,
+      ListPets[this.gameState.currentPet].info.overview,
+      {
+        width: W / 3,
+        height: H * 0.7,
+        backgroundColor: 0x000000,
+        backgroundAlpha: 0.2,
+        textColor: "#ffffff",
+        fontSize: Math.ceil(H / 20),
+        align: "left",
+        padding: 25,
+        borderRadius: 15,
+      },
+    );
 
     console.log("PetScene");
     newBackButton(this, "PetsScene");
