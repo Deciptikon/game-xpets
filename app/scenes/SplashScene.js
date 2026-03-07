@@ -35,6 +35,8 @@ export default class SplashScene extends Phaser.Scene {
 
     this.loadPetsResourses();
 
+    this.load.text("readme", "./README.md");
+
     //this.load.image("splash", "./assets/splash.png");
 
     //this.loadFromKollection(ListPets, ["image", "icon"]);
