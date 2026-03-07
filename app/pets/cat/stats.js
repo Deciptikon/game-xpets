@@ -6,4 +6,5 @@ export const stats = {
   caution: 6, //    осторожность
   dodge: 5, //      уклонение
   morale: 6, //     мораль
+  perception: 4, // восприятие
 };

@@ -19,9 +19,10 @@ export const STATS = {
   guard: { name: "Защита", icon: "🛡️" },
   invisible: { name: "Незаметность", icon: "👤" },
   speed: { name: "Скорость", icon: "🌪️" },
-  caution: { name: "Осторожность", icon: "👀" },
+  caution: { name: "Осторожность", icon: "🚨" },
   dodge: { name: "Уклонение", icon: "🌀" },
   morale: { name: "Мораль", icon: "⚖️" },
+  perception: { name: "Восприятие", icon: "👁️" },
 };
 
 // разблокировка слотов инвенторя и абилок в зависимости от уровня прокачки
