@@ -52,8 +52,25 @@ export default class PetScene extends Phaser.Scene {
   }
 
   drawStats() {
-    if (this.statsBars) this.statsBars.clear();
-    this.statsBars = this.add.graphics();
+    new IconButton(
+      this,
+      W * 0.5,
+      H * 0.375,
+      350,
+      350,
+      `icon_${this.gameState.currentPet}`,
+      null,
+      () => {
+        console.log(`icon_${this.gameState.currentPet}`);
+        this.scene.start("InventoryScene");
+        //this.gameState.currentPet = key;
+        //this.scene.start("PetScene");
+      },
+      {
+        scale: 0.9,
+        hoverScale: 1.0,
+      },
+    );
 
     const barWidth = W / 5;
     const xl = H * 0.15;
@@ -121,7 +138,7 @@ export default class PetScene extends Phaser.Scene {
 
       y += h + s;
     }
-
+    /** 
     new Button(
       this,
       W / 2,
@@ -131,6 +148,6 @@ export default class PetScene extends Phaser.Scene {
         this.scene.start("InventoryScene");
       },
       positiveButton,
-    );
+    );*/
   }
 }

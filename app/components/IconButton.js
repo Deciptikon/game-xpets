@@ -9,9 +9,9 @@ export default class IconButton extends Phaser.GameObjects.Container {
       textOffsetY = 0,
       textStyle = {},
       scale = 1,
+      hoverScale = 1.1,
       tint = 0xffffff,
       hoverTint = 0xcccccc,
-      hoverScale = 1.1,
       bgColor = 0x333333, // Цвет фона
       bgAlpha = 0.7, // Прозрачность фона
       bgRadius = 10, // Радиус скругления углов
