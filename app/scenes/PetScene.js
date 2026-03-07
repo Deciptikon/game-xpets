@@ -3,7 +3,7 @@ import Button, { newBackButton } from "../components/Button.js";
 import IconButton from "../components/IconButton.js";
 import StatusBar from "../components/StatusBar.js";
 import TextBox from "../components/TextBox.js";
-import { W, H, positiveButton } from "../constants.js";
+import { W, H, positiveButton, FONT_SIZE } from "../constants.js";
 import { ListPets, STATS } from "../pets/listPets.js";
 
 export default class PetScene extends Phaser.Scene {
@@ -20,21 +20,28 @@ export default class PetScene extends Phaser.Scene {
     this.gameState.updateStats();
     this.drawStats();
 
-    const info = new TextBox(
+    const textBox = new TextBox(
       this,
-      H / 20,
+      H / 10,
       H * 0.2,
       ListPets[this.gameState.currentPet].info.overview,
       {
         width: W / 3,
         height: H * 0.7,
-        backgroundColor: 0x000000,
-        backgroundAlpha: 0.2,
+        backgroundColor: 0x6187a0,
         textColor: "#ffffff",
-        fontSize: Math.ceil(H / 20),
-        align: "left",
-        padding: 25,
-        borderRadius: 15,
+        fontSize: FONT_SIZE,
+        padding: 8,
+        borderRadius: 10,
+        scrollable: true,
+        scrollStep: 1,
+        scrollBar: {
+          width: 25,
+          bgColor: 0x000000,
+          bgAlpha: 0.2,
+          thumbColor: 0x333333,
+          thumbAlpha: 0.8,
+        },
       },
     );
 
