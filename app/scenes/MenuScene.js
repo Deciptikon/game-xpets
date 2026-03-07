@@ -1,5 +1,5 @@
 console.log("start menu");
-import { W, H, positiveButton } from "../constants.js";
+import { W, H, positiveButton, isMobile } from "../constants.js";
 import Button from "../components/Button.js";
 
 export default class MenuScene extends Phaser.Scene {
@@ -30,6 +30,31 @@ export default class MenuScene extends Phaser.Scene {
       "Настройки",
       "SettingsScene",
     );
+
+    if (!isMobile) {
+      const fullscreenButton = new Button(
+        this,
+        W - H / 10,
+        H / 10,
+        this.scale.isFullscreen ? "[=]" : "[ ]",
+        () => {
+          if (this.scale.isFullscreen) {
+            this.scale.stopFullscreen();
+            fullscreenButton.setText("[ ]");
+          } else {
+            this.scale.startFullscreen();
+            fullscreenButton.setText("[=]");
+          }
+        },
+        {
+          color: 0xff5900,
+          width: H / 10,
+          height: H / 10,
+          textStyle: { fontSize: `${Math.ceil(H / 20)}px`, color: "#ffffff" },
+        },
+      );
+    }
+
     const infoButton = new Button(
       this,
       W - H / 10,
